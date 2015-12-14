@@ -45,7 +45,7 @@
                             <md-button ng-click="ctrl.setCurrentItem()">Clear</md-button>
 
                         </div>
-                        <div flex="50">
+                        <div flex="50" ng-if="ctrl.currentItem">
                             <h3 ng-show="ctrl.currentItem">Current Item</h3>
                             <div class="code">
                                 <p>
