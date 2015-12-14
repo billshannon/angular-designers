@@ -42,10 +42,11 @@
                                     </div>
                                 </md-list-item>
                             </md-list>
+                            <md-button ng-click="ctrl.setCurrentItem()">Clear</md-button>
 
                         </div>
                         <div flex="50">
-                            <h3>Current Item</h3>
+                            <h3 ng-show="ctrl.currentItem">Current Item</h3>
                             <div class="code">
                                 <p>
                                     <pre>
