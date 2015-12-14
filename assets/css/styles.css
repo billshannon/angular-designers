@@ -5,11 +5,6 @@
     display: none !important;
 }
 
-.code {
-    margin: 10px;
-    color: red;
-}
-
 md-whiteframe {
     margin: 7px;
     height: 50px;
@@ -17,6 +12,20 @@ md-whiteframe {
     color: #FFF;
 }
 
+.even {
+    background-color: #E1F5FE;
+}
+
+.odd {
+    background-color: #B3E5FC;
+}
+
 .active {
     background-color: #c8e4fa;
+}
+
+
+.code {
+    margin: 10px;
+    color: red;
 }

@@ -33,7 +33,10 @@
                         <div flex="50">
                             <h3>Items</h3>
                             <md-list>
-                                <md-list-item class="md-2-line" ng-class="{'active':ctrl.currentItem.id == item.id}"" ng-click="ctrl.setCurrentItem(item)"
+                                <md-list-item class="md-2-line"
+                                              ng-class-even="'even'" ng-class-odd="'odd'"
+                                              ng-class="{'active':ctrl.currentItem.id == item.id}"
+                                              ng-click="ctrl.setCurrentItem(item)"
                                               ng-repeat="item in ctrl.items | filter:{label:q}">
                                     <img ng-src="{{item.avatar}}?{{$index}}" class="md-avatar" alt="{{item.label}}">
                                     <div class="md-list-item-text">
