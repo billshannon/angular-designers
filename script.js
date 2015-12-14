@@ -8,6 +8,7 @@ angular.module('myApp', ['ngMaterial'])
         };
 
         this.items = [{
+            id: 1,
                 label: 'Item One',
                 description: 'This is the first item',
                 price: '100',
@@ -15,6 +16,7 @@ angular.module('myApp', ['ngMaterial'])
                 avatar: imagePath
             },
             {
+                id: 2,
                 label: 'Item Two',
                 description: 'I\'m the second item',
                 price: '200',
@@ -22,6 +24,7 @@ angular.module('myApp', ['ngMaterial'])
                 avatar: imagePath
             },
             {
+                id: 3,
                 label: 'Item Three',
                 description: 'This is the last item',
                 price: '300',

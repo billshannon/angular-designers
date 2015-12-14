@@ -33,7 +33,8 @@
                         <div flex="50">
                             <h3>Items</h3>
                             <md-list>
-                                <md-list-item class="md-2-line" ng-click="ctrl.setCurrentItem(item)" ng-repeat="item in ctrl.items | filter:{label:q}">
+                                <md-list-item class="md-2-line" ng-class="{'active':ctrl.currentItem.id == item.id}"" ng-click="ctrl.setCurrentItem(item)"
+                                              ng-repeat="item in ctrl.items | filter:{label:q}">
                                     <img ng-src="{{item.avatar}}?{{$index}}" class="md-avatar" alt="{{item.label}}">
                                     <div class="md-list-item-text">
                                         <h3>{{item.label}}</h3>
@@ -43,21 +44,25 @@
                                 </md-list-item>
                             </md-list>
                             <md-button ng-click="ctrl.setCurrentItem()">Clear</md-button>
-
                         </div>
+
                         <div flex="50" ng-if="ctrl.currentItem">
-                            <h3 ng-show="ctrl.currentItem">Current Item</h3>
+                            <h3>Current Item</h3>
                             <div class="code">
                                 <p>
-                                    <pre>
-                                {{ctrl.currentItem | json}}
-                            </pre>
+                                <pre>{{ctrl.currentItem | json}}</pre>
                                 </p>
                             </div>
 
+                            <div ng-switch="ctrl.currentItem.price">
+                                <md-whiteframe class="md-whiteframe-5dp" flex="100" layout layout-align="center center">
+                                    <div ng-switch-when="200">High Roller</div>
+                                    <div ng-switch-when="300">Baller Status!</div>
+                                    <div ng-switch-default="100">Not bad!</div>
+                                </md-whiteframe>
+                            </div>
                         </div>
                     </div>
-
 
 
                 </md-card-content>
