@@ -51,27 +51,22 @@
 
                         <div flex="50" ng-if="ctrl.currentItem">
                             <md-card>
+                                <md-card-content >
+                                    <md-whiteframe ng-mouseenter="ctrl.showDiscount()"
+                                                   ng-mouseleave="ctrl.removeDiscount()"
 
-                                <md-card-content ng-controller="OptionsCtrl as optionsCtrl">
-                                    <md-input-container class="md-block">
-                                        <label>Options</label>
+                                                   class="md-whiteframe-5dp" flex="100"
+                                                   layout layout-align="center center">
+                                        <strong>Rollover to see Discount</strong>
+                                    </md-whiteframe>
+                                    <md-whiteframe ng-if='ctrl.discountMessage' class="md-whiteframe-5dp" flex="100"
+                                                   layout layout-align="center center">
+                                        <strong>{{ctrl.discountMessage}}</strong>
+                                    </md-whiteframe>
 
-                                        <md-select ng-model="optionsCtrl.option">
-                                            <md-option ng-repeat="option in optionsCtrl.options"
-                                                       value="{{option.value}}">
-                                                {{option.label}}
-                                            </md-option>
-                                        </md-select>
-                                    </md-input-container>
-
-                                    <select ng-model="optionsCtrl.option"
-                                            ng-options="option.value as option.label for option in optionsCtrl.options">
-                                        <option value="">Choice an option</option>
-                                    </select>
 
                                 </md-card-content>
                             </md-card>
-
 
                             <md-card>
                                 <md-card-content>
@@ -99,24 +94,9 @@
                                                 </div>
                                             </div>
                                         </md-input-container>
-
                                     </form>
-
                                 </md-card-content>
                             </md-card>
-                            <md-card>
-                                <md-card-content>
-
-                                    <h3>Current Form Item</h3>
-                                    <div class="code">
-                                        <p><pre>
-                                            {{currentItemForm | json }}
-                                        </pre>
-                                        </p>
-                                    </div>
-                                </md-card-content>
-                            </md-card>
-
                         </div>
                     </div>
                 </md-card-content>
