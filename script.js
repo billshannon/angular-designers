@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMaterial'])
+angular.module('myApp', ['ngMaterial', 'ngMessages'])
     .controller('MainCtrl', function () {
         //var imagePath = 'assets/images/angular-logo.svg'
         var imagePath = 'http://www.noao.edu/image_gallery/images/d2/ngc2237_200.jpg';
