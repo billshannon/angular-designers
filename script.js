@@ -7,11 +7,15 @@ angular.module('myApp', ['ngMaterial'])
             this.currentItem = item;
         };
 
+        this.submitItem = function(item) {
+            this.submittedMessage = 'Success! ' + item.label + ' was submmited!';
+        }
+
         this.items = [{
             id: 1,
                 label: 'Item One',
                 description: 'This is the first item',
-                price: '100',
+                price: 100,
                 url: 'http://angularjs.org',
                 avatar: imagePath
             },
@@ -19,7 +23,7 @@ angular.module('myApp', ['ngMaterial'])
                 id: 2,
                 label: 'Item Two',
                 description: 'I\'m the second item',
-                price: '200',
+                price: 200,
                 url: 'http://angularjs.org',
                 avatar: imagePath
             },
@@ -27,7 +31,7 @@ angular.module('myApp', ['ngMaterial'])
                 id: 3,
                 label: 'Item Three',
                 description: 'This is the last item',
-                price: '300',
+                price: 300,
                 url: 'http://angularjs.org',
                 avatar: imagePath
             }]
