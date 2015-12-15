@@ -50,24 +50,40 @@
                         </div>
 
                         <div flex="50" ng-if="ctrl.currentItem">
-                            <h3>Current Item</h3>
-                            <div class="code">
-                                <p>
-                                <pre>{{ctrl.currentItem | json}}</pre>
-                                </p>
-                            </div>
+                            <md-card>
+                                <md-card-content>
+                                    <h3>Current Item</h3>
+                                    <div class="code">
+                                        <p>
+                                        <pre>{{ctrl.currentItem | json}}</pre>
+                                        </p>
+                                    </div>
 
-                            <div ng-switch="ctrl.currentItem.price">
-                                <md-whiteframe class="md-whiteframe-5dp" flex="100" layout layout-align="center center">
-                                    <div ng-switch-when="200">High Roller</div>
-                                    <div ng-switch-when="300">Baller Status!</div>
-                                    <div ng-switch-default="100">Not bad!</div>
-                                </md-whiteframe>
-                            </div>
+                                </md-card-content>
+                            </md-card>
+                            <md-card>
+                                <md-card-content>
+                                    <form name="currentItemForm">
+                                        <md-input-container class="md-block">
+                                            <label>Label</label>
+                                            <input name="label" ng-model="ctrl.currentItem.label">
+                                        </md-input-container>
+
+                                    </form>
+                                    <h3>Current Item Form Object</h3>
+                                    <div class="code">
+                                        <p>
+                                            <pre>
+                                        {{currentItemForm | json}}
+                                    </pre>
+                                        </p>
+                                    </div>
+
+                                </md-card-content>
+                            </md-card>
+
                         </div>
                     </div>
-
-
                 </md-card-content>
             </md-card>
         </div>
