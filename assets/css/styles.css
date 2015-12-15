@@ -29,3 +29,23 @@ md-whiteframe {
     margin: 10px;
     color: red;
 }
+
+select {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 2px 2px 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    background-color: transparent;
+    position: relative;
+    box-sizing: content-box;
+    min-width: 64px;
+    max-height: 26px;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
