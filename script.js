@@ -1,4 +1,20 @@
-angular.module('myApp', ['ngMaterial', 'ngMessages'])
+angular.module('myApp', ['ngMaterial', 'ngMessages', 'ui.router'])
+
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/items");
+
+        $stateProvider
+            .state('items', {
+                url: "/items",
+                templateURL: 'app/items/tmpl.html'
+            })
+            .state('about', {
+                url: "/about",
+                templateURL: 'app/about/about.tmpl.html'
+            })
+    })
+
+
     .controller('MainCtrl', function () {
         //var imagePath = 'assets/images/angular-logo.svg'
         var imagePath = 'http://www.noao.edu/image_gallery/images/d2/ngc2237_200.jpg';
@@ -12,7 +28,7 @@ angular.module('myApp', ['ngMaterial', 'ngMessages'])
         };
 
         this.discount = 0;
-        this.showDiscount = function() {
+        this.showDiscount = function () {
             this.discount++;
             this.discountMessage = 'Hooray! Your discount is ' + this.discount + '%'
         };
@@ -20,7 +36,6 @@ angular.module('myApp', ['ngMaterial', 'ngMessages'])
         this.removeDiscount = function () {
             this.discountMessage = null
         };
-
 
 
         this.items = [{
